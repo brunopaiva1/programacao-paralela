@@ -1,0 +1,31 @@
+Saída
+
+Enter number of iterations: 20
+Enter number of threads: 4
+Thread 1: Iteration 5
+Thread 0: Iteration 0
+Thread 3: Iteration 15
+Thread 0: Iteration 1
+Thread 0: Iteration 2
+Thread 0: Iteration 3
+Thread 0: Iteration 4
+Thread 2: Iteration 10
+Thread 3: Iteration 16
+Thread 2: Iteration 11
+Thread 2: Iteration 12
+Thread 2: Iteration 13
+Thread 2: Iteration 14
+Thread 1: Iteration 6
+Thread 1: Iteration 7
+Thread 1: Iteration 8
+Thread 1: Iteration 9
+Thread 3: Iteration 17
+Thread 3: Iteration 18
+Thread 3: Iteration 19
+
+A. Apartir da saída acima podemos observar um padrão referente a um escalonamento estático, 
+em que quer dizer que as interações são atribuídas para as threads antes da execução, mantendo um padrão de 
+atribuição, ou seja, da interação 0 até a interação 4 foi atribuido a thread 0, da interação
+5 até a interação 9 foi atribuido a thread 1, da interação 10 até a 14 foi atribuído a thread
+2, da interação 15 a 19 foi atribuído a 3, o que mostra um estilo "round-robin" para escalonamentos 
+Static (estático)
