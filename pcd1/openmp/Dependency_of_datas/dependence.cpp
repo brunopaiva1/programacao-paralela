@@ -27,6 +27,9 @@ int main(){
         a[i] = a[i-1] + i;
     }
 
+    std::cout << "Resultado: " << a[n-1] << std::endl;
+
+
     double end_serial = omp_get_wtime();
     std::cout << "Serial execution time: " << (end_serial - start_serial) << " seconds" << std::endl;
 
@@ -41,6 +44,8 @@ int main(){
     for (long long i = 1; i < n; i++) {
         a_parallel[i] = (i * (i + 1)) / 2; // Progressão aritmética de Gauss
     }
+
+    std::cout << "Resultado: " << a_parallel[n-1] << std::endl;
 
     double end_parallel = omp_get_wtime();
     std::cout << "Parallel execution time: " << (end_parallel - start_parallel) << " seconds" << std::endl;
