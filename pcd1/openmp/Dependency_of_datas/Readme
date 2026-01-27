@@ -1,0 +1,4 @@
+Nesta questão substituimos o trecho de código referente a dependencia de dados
+pela soma da progressão aritimetica de Gauss que realiza a soma de todos os 
+valores entre 1 e n. Isso faz com que o valor atual não dependa mais dados
+anterior. 
