@@ -1,13 +1,15 @@
 1. Suponha que precisamos calcular n valores e somá-los. Suponha que também tenhamos
 p núcleos e p seja muito menor que n. Então cada núcleo pode calcular uma soma parcial
 de aproximadamente valores n/p da seguinte maneira:
+
 minha_soma = 0;
 meu_pri_i = . . . ;
 meu_ult_i = . . . ;
 for (meu_i = meu_pri_i; meu_i < meu_ult_i; meu_i+=meu_desl) {
-meu_x = Compute_prox_valor(. . .);
-minha_soma += meu_x;
+    meu_x = Compute_prox_valor(. . .);
+    minha_soma += meu_x;
 }
+
 Aqui o prefixo meu_ indica que cada núcleo está usando suas próprias variáveis priva-
 das e cada núcleo pode executar este bloco de código independentemente dos outros
 núcleos.
