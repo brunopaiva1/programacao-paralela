@@ -1,0 +1,57 @@
+1. Suponha que precisamos calcular n valores e somá-los. Suponha que também tenhamos
+p núcleos e p seja muito menor que n. Então cada núcleo pode calcular uma soma parcial
+de aproximadamente valores n/p da seguinte maneira:
+minha_soma = 0;
+meu_pri_i = . . . ;
+meu_ult_i = . . . ;
+for (meu_i = meu_pri_i; meu_i < meu_ult_i; meu_i+=meu_desl) {
+meu_x = Compute_prox_valor(. . .);
+minha_soma += meu_x;
+}
+Aqui o prefixo meu_ indica que cada núcleo está usando suas próprias variáveis priva-
+das e cada núcleo pode executar este bloco de código independentemente dos outros
+núcleos.
+Supondo que cada chamada para Compute_prox_valor requer aproximadamente a mesma
+quantidade de trabalho, elabore fórmulas para calcular meu_pri_i, meu_ult_i e meu_desl.
+Lembre-se de que cada núcleo deve receber aproximadamente o mesmo número de ele-
+mentos de computação no loop.
+Dica: primeiro considere o caso em que n é divisível por p. A partir daí, elabore fórmulas
+para o caso em que n não é divisível por p.
+
+Resposta:
+
+Abordagem com distribuição em bloco
+
+Caso 1: n é divisivél por p
+
+chunk = n/p;
+meu_desl = 1;
+
+minha_soma = 0;
+meu_pri_i = rank * chunk ;
+meu_ult_i = (rank + 1) * chunk ;
+for (meu_i = meu_pri_i; meu_i < meu_ult_i; meu_i+=meu_desl) {
+    meu_x = Compute_prox_valor(meu_i);
+    minha_soma += meu_x;
+}
+
+Caso 2: n não é duvisivel por p
+
+chunk = n/p;
+resto = n % p;
+meu_desl = 1;
+
+if (rank < resto){
+    meu_pri_i = rank * (chunk + 1);
+    meu_ult_i = meu_pri_i + (chunk + 1);
+} else {
+    meu_pri_i = rank * chunk + resto;
+    meu_ult_i = meu_pri_i + chunk;
+}
+
+minha_soma = 0;
+for (meu_i = meu_pri_i; meu_i < meu_ult_i; meu_i+=meu_desl) {
+    meu_x = Compute_prox_valor(meu_i);
+    minha_soma += meu_x;
+}
+
