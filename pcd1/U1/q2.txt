@@ -38,3 +38,15 @@ p = 3
 Core 0: 0 3 6 => time = 2 + 8 + 14 = 24ms
 Core 1: 1 4 7 => time = 4 + 10 + 16 = 30ms
 Core 2: 2 5 8 => time = 6 + 12 + 18 = 36ms
+
+Diferença de 12ms do core 0 para o core 2
+
+Distribuição de bloco
+
+chuck = 9/3 = 3
+
+Core 0: 0 1 2 => time = 2 + 4 + 6 = 12ms
+Core 1: 3 4 5 => time = 8 + 10 + 12 = 30ms
+Core 2: 6 7 8 => time = 14 + 16 + 18 = 48ms
+
+Diferença de 36ms entre o core 0 e o core 2
