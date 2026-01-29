@@ -20,6 +20,10 @@ sua fórmula deve reduzir a diferença do tempo de execução entre os núcleos.
 
 Resposta:
 
+meu_pri_i = rank * chunk;
+meu_ult_i = (rank + 1) * chunk;
+meu_desl = 1;
+
 No quesito redução da diferença de tempo entre os cores, usamos a distribuição snake:
 
 n = 9
