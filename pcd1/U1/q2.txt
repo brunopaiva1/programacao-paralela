@@ -1,0 +1,40 @@
+2. Suponha que precisamos calcular n valores e somá-los. Suponha também que tenhamos
+p núcleos e p seja muito menor que n. Então cada núcleo pode calcular uma soma parcial
+de aproximadamente n/p valores da seguinte maneira:
+minha_soma = 0;
+meu_pri_i = . . . ;
+meu_ult_i = . . . ;
+for (meu_i = meu_pri_i; meu_i < meu_ult_i; meu_i+=meu_desl) {
+meu_x = Compute_prox_valor(. . .);
+minha_soma += meu_x;
+}
+Aqui o prefixo meu_ indica que cada núcleo está usando suas próprias variáveis priva-
+das e cada núcleo pode executar este bloco de código independentemente dos outros
+núcleos.
+
+Considerando que a chamada com i = k requer k +1 vezes mais trabalho que a chamada
+com i = 0 (se a chamada com i = 0 requer 2 milissegundos, a chamada com i = 1
+requer 4, a chamada com i = 2 requer 6...), elabore fórmulas para calcular meu_pri_i,
+meu_ult_i e meu_desl. Comparado com a distribuição em blocos contíguos de iterações,
+sua fórmula deve reduzir a diferença do tempo de execução entre os núcleos.
+
+Resposta:
+
+No quesito redução da diferença de tempo entre os cores, usamos a distribuição snake:
+
+n = 9
+p = 3
+
+Core 0: 0 5 6 => time = 2 + 12 + 14 = 28ms
+Core 1: 1 4 7 => time = 4 + 10 + 16 = 30ms
+Core 2: 2 3 8 => time = 6 + 8 + 18 = 32ms
+
+Porém como o meu_desl é uma variavel fixa, impossibilita de usar essa distribuição,
+tornando a distribuição ciclica a mais viável:
+
+n = 9
+p = 3
+
+Core 0: 0 3 6 => time = 2 + 8 + 14 = 24ms
+Core 1: 1 4 7 => time = 4 + 10 + 16 = 30ms
+Core 2: 2 5 8 => time = 6 + 12 + 18 = 36ms
