@@ -1,0 +1,55 @@
+3. Escreva um pseudocódigo para uma soma global estruturada em árvore. Suponha que o
+número de núcleos seja uma potência de dois. 
+
+Resposta:
+
+supondo que p = 8
+
+
+step = 1;
+div = 2;
+
+while(rank <= p){
+    if(rank % div == 0){
+        // Recv
+        partiner = rank + step;
+        sum += my_value;
+    } else{
+        // Send
+        partiner = rank - step;
+        break;
+    }
+
+    div *= 2;
+    step *= 2;
+}
+
+Primeira interação:
+
+Quando o rank = 0 seu parceiro é 1
+Quando o rank = 1 seu parceiro é 0
+Quando o rank = 2 seu parceiro é 3
+Quando o rank = 3 seu parceiro é 2
+Quando o rank = 4 seu parceiro é 5
+Quando o rank = 5 seu parceiro é 4
+Quando o rank = 6 seu parceiro é 7
+Quando o rank = 7 seu parceiro é 6
+
+Segunda interação:
+
+step = 2
+div = 4
+
+Quando o rank = 0 seu parceiro é 2
+Quando o rank = 2 seu parceiro é 0
+Quando o rank = 4 seu parceiro é 6
+Quando o rank = 6 seu parceiro é 4
+
+Terceira interação
+
+step = 4
+div = 8
+
+Quando o rank = 0 seu parceiro é 4
+Quando o rank = 4 seu parceiro é 0
+
