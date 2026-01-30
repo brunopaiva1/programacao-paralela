@@ -1,0 +1,27 @@
+5. Escreva um pseudocódigo para uma soma global estruturada em árvore. Considere que
+o número de núcleos pode não ser uma potência de dois.
+
+Resposta:
+
+step = 1;
+div = 2;
+
+while(rank <= p){
+    if(rank % div == 0){
+        // Recv
+        partiner = rank + step;
+        if(partiner < p){
+            sum += my_value;
+        }
+    } else {
+        // Send
+        partiner = rank - step;
+        break;
+    }
+
+    div *= 2;
+    step *= 2;
+}
+
+Atribuimos o segundo if interno que verifica se o parceiro existe,
+se não ele guarda seu valor e parte para a próxima
