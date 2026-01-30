@@ -1,0 +1,37 @@
+6. Elabore fórmulas para o número de recebimentos e adições que o núcleo 0 realiza usando
+    (a) uma soma global onde apenas o núcleo 0 realiza as adições;
+    (b) uma soma global estruturada em árvore.
+Faça uma tabela mostrando os números de recebimentos e adições realizados pelo nú-
+cleo 0 quando as duas somas são usadas com 2, 4, 8, · · · , 1024 núcleos.
+
+Resposta:
+
+(A) 
+Todos os cores, menos o zero enviam seus valores diretamente para o núcleo 0
+que processa um por um.
+
+Número de recebimentos: p - 1;
+Número de adições: p - 1
+
+(B)
+Neste contexto o trabalho é logarítmico, isso porque a cada nível da árvore, o core 0
+recebe apenas uma mensagem de um parceiro e realiza uma adição. O número de níveis da árvore 
+é definido pela potência de 2.
+
+Número de recebimentos: Log2p
+Número de adições: Log2p
+
+
+Tabela:
+
+(p) (p−1) (log2​p)
+2     1      1
+4     3      2
+8     7      3
+16    15     4
+32    31     5
+64    63     6
+128   127    7
+256   255    8
+512   511    9
+1024  1023   10
