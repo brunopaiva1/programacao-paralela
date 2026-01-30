@@ -1,0 +1,40 @@
+4. Podemos usar os operadores bit a bit de C para implementar uma soma global estru-
+turada em árvore. Implemente este algoritmo em pseudocódigo usando o operador OU
+EXCLUSIVO e o operador shift para esquerda.
+
+Resposta:
+
+O ou exclusivo (^) ou simplesmente XOR, retorna verdadeiro (1) quando os valores são 
+diferentes, e falso (0) quando são iguais.
+
+bitmask = 1;
+div = 2;
+
+while(bitmask < p){
+    partiner = rank ^ bitmask;
+    if(rank % div == 0){
+        // Recv
+        sum += my_value;
+    } else{
+        // Send
+        break;
+    }
+
+    bitmask <<= 1;
+}
+
+p = 4
+
+Primeira rodada:
+
+rank   bitmask          
+0000 ^ 0001 = 0001
+0001 ^ 0001 = 0000
+0010 ^ 0001 = 0011
+0011 ^ 0001 = 0010
+
+Segunda rodada:
+
+rank   bitmask
+0000 ^ 0010 = 0010
+0010 ^ 0010 = 0000
