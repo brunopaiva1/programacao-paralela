@@ -1,0 +1,9 @@
+7. Descreva um problema de pesquisa em sua área (Tecnologia de Informação, Engenharia
+de Software...) que se beneficiaria com o uso da computação paralela. Forneça um
+esboço de como o paralelismo seria usado. Você usaria paralelismo de tarefas ou de
+dados? Por quê?
+
+Em geofísica utilizamos metodos ou conceitos de programação de tarefa, para executar
+partes númericas em paralelos, como o percorrer das dimensões de um grid, ou do calculo
+da equação da onda acústica. Podemos utilizar o paralelismo de dados em alguns casos e o 
+paralelismo de tarefa em outros.
