@@ -1,0 +1,45 @@
+/*1. Sendo n o tamanho do problema e p o número de threads (ou processos):
+(a) Suponha que o tempo de execução de um programa sequencial seja dado por
+Tsequencial = n2, onde as unidades do tempo de execução estão em microssegun-
+dos. Suponha que uma paralelização deste programa tenha tempo de execução
+Tparalelo = n2/p + log2(p). Escreva um programa que encontre as acelerações e efi-
+ciências deste programa para vários valores de n e p. Execute seu programa com
+n = 10, 20, 40, · · · , 320 e p = 1, 2, 4, · · · , 128.
+• O que acontece com os speedups e eficiências à medida que p aumenta e n é
+mantido fixo?
+• O que acontece quando p é fixo e n é aumentado?
+(b) Suponha que Tparalelo = Tsequencial/p + Toverhead. Suponha também que mantemos p
+fixo e aumentamos o tamanho do problema.
+• Mostre que, se Toverhead crescer mais lentamente que Tsequencial, a eficiência pa-
+ralela aumentará à medida que aumentarmos o tamanho do problema.
+• Mostre que se, por outro lado, Toverhead crescer mais rápido que Tsequencial, a
+eficiência paralela diminuirá à medida que aumentamos o tamanho do problema. */
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <string>
+
+int main(int argc, char* argv[]) {
+    if (argc < 3) {
+        std::cerr << "Uso: " << argv[0] << " <n> <p>" << std::endl;
+        return 1;
+    }
+
+    double n = std::stod(argv[1]);
+    double p = std::stod(argv[2]);
+
+    double t_seq = std::pow(n, 2);
+    double t_par = (t_seq / p) + std::log2(p);
+
+    double speedup = t_seq / t_par;
+    double eficiencia = speedup / p;
+
+    std::cout << std::setw(5) << (int)n << " | " 
+              << std::setw(5) << (int)p << " | " 
+              << std::fixed << std::setprecision(4) 
+              << std::setw(12) << speedup << " | " 
+              << std::setw(12) << eficiencia << std::endl;
+
+    return 0;
+}
