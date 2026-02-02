@@ -1,0 +1,8 @@
+2. Às vezes, diz-se que um programa paralelo que obtém um speedup maior que p (o nú-
+mero de processos ou threads) tem speedup superlinear. No entanto, muitos autores não
+consideram os programas que superam as "limitações de recursos"como tendo acelera-
+ção superlinear. Por exemplo, um programa que deve usar armazenamento secundário
+para seus dados quando é executado em um sistema de processador único pode ser
+capaz de acomodar todos os seus dados na memória principal quando executado em um
+grande sistema de memória distribuída. Dê outro exemplo de como um programa pode
+superar uma limitação de recursos e obter speedups maiores que p.
