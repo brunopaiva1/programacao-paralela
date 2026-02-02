@@ -6,3 +6,20 @@ para seus dados quando é executado em um sistema de processador único pode ser
 capaz de acomodar todos os seus dados na memória principal quando executado em um
 grande sistema de memória distribuída. Dê outro exemplo de como um programa pode
 superar uma limitação de recursos e obter speedups maiores que p.
+
+Resposta:
+
+Um exemplo de programa seria um algoritmo de busca em árvore, e pode ser apresentado 
+em dois cenários:
+
+Cenário 1: Apenas uma thread explorando a árvore de maneira sequencial da esquerda para
+a direita. Se a solução estiver no extremo direito, a thread terá que percorrer toda a 
+árvore até encontrar o objetivo. 
+
+Cenário 2: Diversas threads realizam a exploração na árvore e exploram diferentes sub-
+árvores de maneira simultânea, caso um dos processos encontre a solução em uma das 
+sub-árvores rapidamente, ele pode interromper todos os outros processos.
+
+Nesse caso o trabalho paralelo pode ser muito menor do que o trabalho realizado
+pelo sistema sequencial. Por exemplo, o sistema sequencial faria 1.000.000 de interações
+e a thread 4 do sistema paralelo encontra a solução em 1.000 iterações.
