@@ -1,0 +1,6 @@
+3. Sendo n o tamanho do problema e p o número de threads (ou processos), suponha
+Tserial = n e Tparallel = n/p + log2(p), onde os tempos estão em microssegundos. Se
+aumentarmos p por um fator de k, encontre uma fórmula para quanto precisaremos au-
+mentar n para manter a eficiência constante.
+(a) Quanto devemos aumentar n se dobrarmos o número de processos de 8 para 16?
+(b) O programa paralelo é escalável?
