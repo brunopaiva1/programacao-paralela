@@ -4,3 +4,9 @@ aumentarmos p por um fator de k, encontre uma fórmula para quanto precisaremos 
 mentar n para manter a eficiência constante.
 (a) Quanto devemos aumentar n se dobrarmos o número de processos de 8 para 16?
 (b) O programa paralelo é escalável?
+
+Resposta:
+
+(A)
+
+(B)
