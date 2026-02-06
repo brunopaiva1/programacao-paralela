@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
         local_norm += local_vector2[i] * local_vector2[i];
     }
 
-    MPI_gather(local_vector1.data(), local_n, MPI_DOUBLE, vector1.data(), local_n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+    MPI_Gather(local_vector1.data(), local_n, MPI_DOUBLE, vector1.data(), local_n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
     double global_norm = 0.0;
     MPI_Reduce(&local_norm, &global_norm, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
