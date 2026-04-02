@@ -1,0 +1,7 @@
+4. Um programa que obtém speedup linear é fortemente escalável? Explique sua resposta.
+
+Resposta: Sim, pois na escalabilidade forte o tamanho do problema, ou seja n, é fixo. 
+Já que esse cenário, um programa atinge um speedup linear, isso significa que o tempo 
+de execução foi reduzido na proporção exata dos processadores adicionados. Ou seja, o 
+trabalho fixo foi dividido com 100% de eficiência, provando que o sistema escalou 
+perfeitamente.
