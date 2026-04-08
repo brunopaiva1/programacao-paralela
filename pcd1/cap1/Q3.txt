@@ -9,7 +9,7 @@ supondo que p = 8
 step = 1;
 div = 2;
 
-while(rank <= p){
+while(rank < p){
     if(rank % div == 0){
         // Recv
         partiner = rank + step;

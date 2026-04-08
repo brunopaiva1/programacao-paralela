@@ -21,6 +21,7 @@ while(bitmask < p){
     }
 
     bitmask <<= 1;
+    div <<= 1;
 }
 
 p = 4
