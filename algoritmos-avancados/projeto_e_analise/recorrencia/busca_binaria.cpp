@@ -1,3 +1,7 @@
+// 5. Escolha um algoritmo recorrente para aplicar um dos 4 métodos de resolução de
+// recorrência descritos no capítulo 4 para medir o custo da recorrência do
+// algoritmo escolhido. Compare o resultado com medições de tempo.
+
 #include <iostream>
 #include <vector>
 #include <chrono>
