@@ -33,16 +33,16 @@ Matrix conventional_multiply(const Matrix& A, const Matrix& B) {
     int n = A.size();
     Matrix C(n, vector<int>(n, 0));
     for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++)
-            for (int k = 0; k < n; k++)
+        for (int k = 0; k < n; k++)
+            for (int j = 0; j < n; j++)
                 C[i][j] += A[i][k] * B[k][j];
     return C;
 }
 
 Matrix strassen(const Matrix& A, const Matrix& B) {
     int n = A.size();
-    if (n == 1) {
-        return {{A[0][0] * B[0][0]}};
+    if (n <= 64) {
+        return conventional_multiply(A, B);
     }
     int newSize = n / 2;
     Matrix A11(newSize, vector<int>(newSize));
@@ -97,5 +97,31 @@ Matrix strassen(const Matrix& A, const Matrix& B) {
         }
     }
     return C;
+}
+
+template<typename Func>
+double run_benchmark(Func func, const Matrix& A, const Matrix& B) {
+    auto start = chrono::high_resolution_clock::now();
+    func(A, B);
+    auto end = chrono::high_resolution_clock::now();
+    return chrono::duration<double, milli>(end - start).count();
+}
+
+int main() {
+    ofstream output("strassen_benchmark.csv");
+    output << "Size,Conventional,Strassen\n";
+    for (int n = 2; n <= 512; n *= 2) {
+        Matrix A(n, vector<int>(n)), B(n, vector<int>(n));
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                A[i][j] = rand() % 10;
+                B[i][j] = rand() % 10;
+            }
+        double conventional_time = run_benchmark(conventional_multiply, A, B);
+        double strassen_time = run_benchmark(strassen, A, B);
+        output << n << "," << conventional_time << "," << strassen_time << "\n";
+    }
+    output.close();
+    return 0;
 }
 
