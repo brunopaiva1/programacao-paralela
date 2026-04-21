@@ -110,7 +110,7 @@ double run_benchmark(Func func, const Matrix& A, const Matrix& B) {
 int main() {
     ofstream output("strassen_benchmark.csv");
     output << "Size,Conventional,Strassen\n";
-    for (int n = 2; n <= 512; n *= 2) {
+    for (int n = 2; n <= 2048; n *= 2) {
         Matrix A(n, vector<int>(n)), B(n, vector<int>(n));
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++) {
