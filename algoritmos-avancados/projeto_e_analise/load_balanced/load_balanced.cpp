@@ -20,11 +20,12 @@ void distribute_and_print(const vector<int>& tasks, int workers, const string& s
         makespan = max(makespan, workload[w]);
     }
 
+    cout << scenario_name << "\n";
     cout << setw(8) << "Worker" << " | " << setw(8) << "Workload\n";
     for (int w = 0; w < workers; w++) {
         cout << setw(8) << w << " | " << setw(8) << workload[w] << "\n";
     }
-    cout << "-> Gargalo (Makespan): " << makespan << "\n\n";
+    cout << "-> Gargalo: " << makespan << "\n\n";
 }
 
 int main() {
@@ -36,14 +37,17 @@ int main() {
     int total_work = accumulate(tasks.begin(), tasks.end(), 0);
     
     cout << "Trabalho Total: " << total_work << "\n";
-    cout << "Carga Ideal por Trabalhador: " << total_work / workers << "\n";
+    cout << "Carga Ideal: " << total_work / workers << "\n\n";
 
-    distribute_and_print(tasks, workers, "Distribuição Sequencial (Pior Caso)");
+    distribute_and_print(tasks, workers, "Sequencial");
 
-    mt19937 g(42);
-    shuffle(tasks.begin(), tasks.end(), g);
+    random_device rd;
+    mt19937 g(rd());
     
-    distribute_and_print(tasks, workers, "Distribuição com Permutação Aleatória");
+    for (int i = 1; i <= 4; i++) {
+        shuffle(tasks.begin(), tasks.end(), g);
+        distribute_and_print(tasks, workers, "Aleatoria " + to_string(i));
+    }
 
     return 0;
 }
