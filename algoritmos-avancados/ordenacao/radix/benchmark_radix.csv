@@ -1,0 +1,17 @@
+algorithm,cenario,n,time_ms
+Counting Sort,Pequenos,1000,0.0128437
+Radix Sort,Pequenos,1000,0.0500557
+Counting Sort,Grandes,1000,283.305
+Radix Sort,Grandes,1000,0.0663057
+Counting Sort,Pequenos,10000,0.0314373
+Radix Sort,Pequenos,10000,0.332772
+Counting Sort,Grandes,10000,264.631
+Radix Sort,Grandes,10000,0.61314
+Counting Sort,Pequenos,100000,0.25495
+Radix Sort,Pequenos,100000,3.25314
+Counting Sort,Grandes,100000,264.987
+Radix Sort,Grandes,100000,6.19709
+Counting Sort,Pequenos,500000,1.33326
+Radix Sort,Pequenos,500000,16.9953
+Counting Sort,Grandes,500000,278.114
+Radix Sort,Grandes,500000,31.8417
