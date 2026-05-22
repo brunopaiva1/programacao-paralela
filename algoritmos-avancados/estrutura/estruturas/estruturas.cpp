@@ -72,8 +72,17 @@ public:
 
     bool search(int val){
         NodeLista* curr = head;
+
+        while(curr != nullptr){
+            if(curr->data == val){
+                return true;
+            }
+
+            curr = curr->next
+        }
+        return false;
     }
-}
+};
 
 
 
