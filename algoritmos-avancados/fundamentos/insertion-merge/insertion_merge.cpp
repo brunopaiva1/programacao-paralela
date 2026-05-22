@@ -1,3 +1,7 @@
+// 3. Mostre, numericamente, com suas implementações dos algoritmos insertion-sort e merge-sort, como se comporta o desempenho de 
+// cada algoritmo em entradas de tamanho crescente, considerando pior, melhor e caso médio.
+// Analise, para cada tipo de entrada, se há algum ponto a partir do qual um algoritmo passa a ser mais rápido do que o outro. 
+
 #include <iostream>
 #include <vector>
 #include <chrono>

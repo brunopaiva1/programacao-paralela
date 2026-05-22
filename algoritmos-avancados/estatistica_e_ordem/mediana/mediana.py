@@ -34,9 +34,6 @@ def quick_select_ponderado(pontos, alvo):
         return quick_select_ponderado(maiores, alvo - peso_menores - peso_iguais)
 
 def resolver_agencia_postal(cidades):
-    # print("=" * 55)
-    # print("   QUESTÃO 3: LOCALIZAÇÃO ÓTIMA (MEDIANA PONDERADA)")
-    # print("=" * 55)
     
     for c in cidades:
         print(f"Cidade {c.id}: Pos({c.x}, {c.y}) | População: {c.peso}")
@@ -55,7 +52,6 @@ def resolver_agencia_postal(cidades):
     print(f"X Ótimo: {x_otimo}")
     print(f"Y Ótimo: {y_otimo}")
     print(f"\nRESULTADO: Ponto ideal da agência em ({x_otimo}, {y_otimo})")
-    # print("=" * 55)
 
 if __name__ == "__main__":
     lista_cidades = [
