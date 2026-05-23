@@ -155,7 +155,7 @@ public:
 
 int main(){
 
-    std::vector<int> tamanhos = {1000, 5000, 10000, 20000};
+    std::vector<int> tamanhos = {1000, 5000, 10000, 20000, 50000, 100000, 200000};
     std::mt19937 rng(42);
 
     std::cout << "N | Estrutura | Inserção | Busca" << std::endl;
@@ -169,38 +169,40 @@ int main(){
         SortedArray arr;
         AVLTree avl;
 
+        // --- LISTA ---
         auto t1 = std::chrono::high_resolution_clock::now();
         for(int x : dados) lista.insert(x);
         auto t2 = std::chrono::high_resolution_clock::now();
-        auto d_ins_lista = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+        auto d_ins_lista = std::chrono::duration<double>(t2 - t1).count();
 
         t1 = std::chrono::high_resolution_clock::now();
-        for(int i=0; i<1000; i++) lista.search(rng() % n);
+        for(int i = 0; i < 1000; i++) lista.search(rng() % n);
         t2 = std::chrono::high_resolution_clock::now();
-        auto d_bus_lista = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+        auto d_bus_lista = std::chrono::duration<double>(t2 - t1).count();
 
         // --- ARRAY ---
         t1 = std::chrono::high_resolution_clock::now();
         for(int x : dados) arr.insert(x);
         t2 = std::chrono::high_resolution_clock::now();
-        auto d_ins_arr = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+        auto d_ins_arr = std::chrono::duration<double>(t2 - t1).count();
 
         t1 = std::chrono::high_resolution_clock::now();
-        for(int i=0; i<1000; i++) arr.search(rng() % n);
+        for(int i = 0; i < 1000; i++) arr.search(rng() % n);
         t2 = std::chrono::high_resolution_clock::now();
-        auto d_bus_arr = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+        auto d_bus_arr = std::chrono::duration<double>(t2 - t1).count();
 
         // --- AVL ---
         t1 = std::chrono::high_resolution_clock::now();
         for(int x : dados) avl.insert(x);
         t2 = std::chrono::high_resolution_clock::now();
-        auto d_ins_avl = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+        auto d_ins_avl = std::chrono::duration<double>(t2 - t1).count();
 
         t1 = std::chrono::high_resolution_clock::now();
-        for(int i=0; i<1000; i++) avl.search(rng() % n);
+        for(int i = 0; i < 1000; i++) avl.search(rng() % n);
         t2 = std::chrono::high_resolution_clock::now();
-        auto d_bus_avl = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+        auto d_bus_avl = std::chrono::duration<double>(t2 - t1).count();
 
+        std::cout << std::fixed;
         std::cout << n << " | Lista | " << d_ins_lista << " | " << d_bus_lista << std::endl;
         std::cout << n << " | Array | " << d_ins_arr << " | " << d_bus_arr << std::endl;
         std::cout << n << " | AVL   | " << d_ins_avl << " | " << d_bus_avl << std::endl;
