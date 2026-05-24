@@ -10,6 +10,7 @@
 #include <chrono>
 #include <random>
 #include <iomanip>
+#include <algorithm>
 
 // tabela hash com encadeamento
 class ChainingHash {
