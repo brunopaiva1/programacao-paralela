@@ -1,16 +1,9 @@
-// 1. Implemente as estruturas de dados: 1) array ordenado, 2) lista encadeada
-// não ordenada, e 3) árvore de busca binária balanceada (e.g., AVL,
-// Red-Black trees). Em seguida, insira n elementos em cada estrutura de
-// dados. Depois disso, considerando diferentes valores de n, compare os
-// tempos de inserção e busca de cada uma.
-
 #include <iostream>
 #include <vector>
 #include <chrono>
 #include <random>
 #include <algorithm>
 
-// 1) Array ordenado
 class SortedArray {
     private: 
         std:: vector<int> arr; 
@@ -48,8 +41,6 @@ class SortedArray {
         }
 };
 
-// 2) Lista encadeada não ordenada
-
 struct NodeLista{
     int data;
     NodeLista* next;
@@ -83,8 +74,6 @@ public:
         return false;
     }
 };
-
-// Árvore AVL
 
 struct NodeAVL {
     int data, height;
@@ -169,7 +158,6 @@ int main(){
         SortedArray arr;
         AVLTree avl;
 
-        // --- LISTA ---
         auto t1 = std::chrono::high_resolution_clock::now();
         for(int x : dados) lista.insert(x);
         auto t2 = std::chrono::high_resolution_clock::now();
@@ -180,7 +168,6 @@ int main(){
         t2 = std::chrono::high_resolution_clock::now();
         auto d_bus_lista = std::chrono::duration<double>(t2 - t1).count();
 
-        // --- ARRAY ---
         t1 = std::chrono::high_resolution_clock::now();
         for(int x : dados) arr.insert(x);
         t2 = std::chrono::high_resolution_clock::now();
@@ -191,7 +178,6 @@ int main(){
         t2 = std::chrono::high_resolution_clock::now();
         auto d_bus_arr = std::chrono::duration<double>(t2 - t1).count();
 
-        // --- AVL ---
         t1 = std::chrono::high_resolution_clock::now();
         for(int x : dados) avl.insert(x);
         t2 = std::chrono::high_resolution_clock::now();
@@ -207,7 +193,6 @@ int main(){
         std::cout << n << " | Array | " << d_ins_arr << " | " << d_bus_arr << std::endl;
         std::cout << n << " | AVL   | " << d_ins_avl << " | " << d_bus_avl << std::endl;
     }
-
 
     return 0;
 }

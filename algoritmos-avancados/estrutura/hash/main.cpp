@@ -1,9 +1,3 @@
-// 2. Implemente tabelas hash com encadeamento e usando endereçamento
-// aberto. Realize experimentos para mostrar numericamente as vantagens
-// e desvantagens de cada caso, considerando as operações de inserção,
-// busca e remoção.
-
-
 #include <iostream>
 #include <vector>
 #include <list>
@@ -12,7 +6,6 @@
 #include <iomanip>
 #include <algorithm>
 
-// tabela hash com encadeamento
 class ChainingHash {
 private:
     std::vector<std::list<int>> table;
@@ -47,8 +40,6 @@ public:
         table[index].remove(key);
     }
 };
-
-// tabela hash com endereçamento aberto
 
 class OpenAddressingHash {
 private:

@@ -11,6 +11,7 @@ if [ $? -eq 0 ]; then
     ./benchmark_hash
     
     echo " "
+    echo "Operação finalizado!"
 else
     echo " "
     echo "ERRO: A compilação falhou."
