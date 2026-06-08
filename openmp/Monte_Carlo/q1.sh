@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PREFIX=$HOME/Documentos/openmp/Q1 ; wait
+PREFIX=$HOME/home/bruno/programacao-paralela/openmp/Monte_Carlo/ ; wait
 
 cd $PREFIX ; wait
 
 make -j ; wait
 
-./main.o 4 3000
+./main.o 8 30000000

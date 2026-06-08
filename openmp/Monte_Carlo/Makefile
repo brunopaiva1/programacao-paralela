@@ -1,4 +1,4 @@
 all:
-	g++ -Wall -fopenmp Q1.c -o main.o
+	g++ -Wall -fopenmp monte_carto.c -o main.o
 clean:
 	rm *.o
