@@ -1,0 +1,70 @@
+bruno@pop-os:~/programacao-paralela/pcd1/openmp/trap_modificado$ ./run2.sh 
+Compilando o código otimizado (reduction)...
+Compilação concluída com sucesso!
+---------------------------------------------------
+Testando com 1 thread (5 execuções para extração da mediana)...
+Execução 1 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.170524 segundos
+- - -
+Execução 2 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.240034 segundos
+- - -
+Execução 3 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.531709 segundos
+- - -
+Execução 4 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.349573 segundos
+- - -
+Execução 5 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 8.127975 segundos
+- - -
+---------------------------------------------------
+Testando com 2 threads (5 execuções para extração da mediana)...
+Execução 1 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 4.378712 segundos
+- - -
+Execução 2 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 4.111284 segundos
+- - -
+Execução 3 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 4.807723 segundos
+- - -
+Execução 4 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 4.472171 segundos
+- - -
+Execução 5 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 4.877914 segundos
+- - -
+---------------------------------------------------
+Pronto! Para achar a mediana, basta ordenar os 5 tempos de cada bateria
+do menor para o maior e escolher o 3º valor.

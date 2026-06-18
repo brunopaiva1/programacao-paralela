@@ -66,7 +66,6 @@ public:
         int arestas_mst = 0;
         DSU dsu(V);
 
-        // O calcanhar de aquiles do Kruskal: Ordenar TODAS as arestas
         std::vector<Aresta> arestas_ordenadas = arestas; 
         std::sort(arestas_ordenadas.begin(), arestas_ordenadas.end());
 
@@ -94,7 +93,6 @@ public:
         std::vector<bool> na_mst(V, false);
         int arestas_mst = 0;
         
-        // Fila de prioridade (Binary Heap)
         using pdi = std::pair<double, int>;
         std::priority_queue<pdi, std::vector<pdi>, std::greater<pdi>> pq;
 
@@ -130,19 +128,13 @@ public:
 };
 
 void cenarioEsparso() {
-    std::cout << "--- Questao 1: Grafo Esparso (Rede de Cluster Fsica) ---\n";
+    std::cout << "--- Questao 1: Grafo Esparso (Rede de Cluster Fisica) ---\n";
     std::cout << "Vertices (V): 10, Arestas (E): 17\n";
     
-    // Mapeamento: N1 a N8 = 0 a 7 | S1 = 8 | S2 = 9
     MSTBenchmark cluster(10);
     
-    // N1 a N8 para S1 (Peso 1)
     for(int i = 0; i < 8; i++) cluster.addAresta(i, 8, 1.0);
-    
-    // S1 para S2 (Peso 2)
     cluster.addAresta(8, 9, 2.0);
-    
-    // N1 a N8 para S2 (Peso 3)
     for(int i = 0; i < 8; i++) cluster.addAresta(i, 9, 3.0);
 
     cluster.kruskal();
@@ -152,22 +144,22 @@ void cenarioEsparso() {
 void cenarioDenso() {
     int V = 500;
     int E = (V * (V - 1)) / 2;
-    std::cout << "\n--- Questao 2: Grafo Denso (Broadcast MPI) ---\n";
+    std::cout << "\n--- Questao 2: Grafo Denso (Simulacao de Matriz Logica) ---\n";
     std::cout << "Vertices (V): " << V << ", Arestas (E): " << E << "\n";
     
-    MSTBenchmark mpi(V);
+    MSTBenchmark grafo_denso(V);
     
     std::mt19937 rng(42);
     std::uniform_real_distribution<double> dist(0.5, 10.0);
 
     for (int i = 0; i < V; i++) {
         for (int j = i + 1; j < V; j++) {
-            mpi.addAresta(i, j, dist(rng));
+            grafo_denso.addAresta(i, j, dist(rng));
         }
     }
 
-    mpi.kruskal();
-    mpi.prim();
+    grafo_denso.kruskal();
+    grafo_denso.prim();
 }
 
 int main() {

@@ -1,0 +1,69 @@
+bruno@pop-os:~/programacao-paralela/pcd1/openmp/trap_modificado$ ./run.sh 
+Compilando o código...
+Compilação concluída com sucesso!
+---------------------------------------------------
+Testando com 1 thread (5 execuções para extração da mediana)...
+Execução 1 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.697669 segundos
+- - -
+Execução 2 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.399868 segundos
+- - -
+Execução 3 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.898144 segundos
+- - -
+Execução 4 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.191916 segundos
+- - -
+Execução 5 (1 thread):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333328e+03
+Tempo gasto no bloco paralelo: 7.155352 segundos
+- - -
+---------------------------------------------------
+Testando com 2 threads (5 execuções para extração da mediana)...
+Execução 1 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 6.956005 segundos
+- - -
+Execução 2 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 7.334516 segundos
+- - -
+Execução 3 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 7.716403 segundos
+- - -
+Execução 4 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 7.698443 segundos
+- - -
+Execução 5 (2 threads):
+Enter a, b, and n
+With n = 1410065408 trapezoids, our estimate
+of the integral from 10.000000 to 20.000000 = 2.33333333333338e+03
+Tempo gasto no bloco paralelo: 7.446162 segundos
+- - -
+---------------------------------------------------
+bruno@pop-os:~/programacao-paralela/pcd1/openmp/trap_modificado$ 
