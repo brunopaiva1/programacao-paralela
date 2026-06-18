@@ -95,9 +95,7 @@ int main() {
     }
 
     cout << "\nConclusao Parte 1: A taxa congelou exatamente em " << k << ".00.\n";
-    // cout << "Isso prova que a competitividade eh INDEPENDENTE do tamanho da entrada (N)!\n\n";
 
-    // cout << "=== PROVA EXTRA: A taxa depende apenas da Cache (K) ===\n";
     int N_fixo = 20000;
     cout << "-> Entrada Fixa (N = " << N_fixo << " acessos)\n";
     cout << "--------------------------------------------------------\n";
