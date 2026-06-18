@@ -1,0 +1,22 @@
+=== Demonstracao da Competitividade do Algoritmo LRU ===
+O pior caso para uma cache de tamanho K eh uma sequencia ciclica de K+1 elementos.
+
+-> Cache Fixa (K = 4)
+-> Adversario: Sequencia repetitiva de 5 elementos [1,2,3,4,5]
+--------------------------------------------------------
+Entrada (N) =    100 | Miss LRU =    100 | Miss OPT =     28 | Taxa (LRU/OPT) = 3.57
+Entrada (N) =    500 | Miss LRU =    500 | Miss OPT =    128 | Taxa (LRU/OPT) = 3.91
+Entrada (N) =   1000 | Miss LRU =   1000 | Miss OPT =    253 | Taxa (LRU/OPT) = 3.95
+Entrada (N) =   5000 | Miss LRU =   5000 | Miss OPT =   1253 | Taxa (LRU/OPT) = 3.99
+Entrada (N) =  10000 | Miss LRU =  10000 | Miss OPT =   2503 | Taxa (LRU/OPT) = 4.00
+Entrada (N) =  50000 | Miss LRU =  50000 | Miss OPT =  12503 | Taxa (LRU/OPT) = 4.00
+Entrada (N) = 100000 | Miss LRU = 100000 | Miss OPT =  25003 | Taxa (LRU/OPT) = 4.00
+
+Conclusao Parte 1: A taxa congelou exatamente em 4.00.
+-> Entrada Fixa (N = 20000 acessos)
+--------------------------------------------------------
+Cache (K) =    2 | Miss LRU = 20000 | Miss OPT = 10001 | Taxa Final = 2.00
+Cache (K) =    5 | Miss LRU = 20000 | Miss OPT =  4004 | Taxa Final = 5.00
+Cache (K) =   10 | Miss LRU = 20000 | Miss OPT =  2009 | Taxa Final = 9.96
+Cache (K) =   20 | Miss LRU = 20000 | Miss OPT =  1019 | Taxa Final = 19.63
+Cache (K) =   50 | Miss LRU = 20000 | Miss OPT =   449 | Taxa Final = 44.54
